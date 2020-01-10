@@ -15,7 +15,7 @@ COPY . /usr/src/electron-release-server
 
 COPY config/docker.js config/local.js
 
-RUN chown -R 1101:2000 /
+RUN chown -R 1101:2000 /usr/src/electron-release-server
 
 EXPOSE 80
 
