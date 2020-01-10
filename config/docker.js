@@ -9,7 +9,7 @@ module.exports = {
     migrate: 'alter'
   },
 
-  port: 80,
+  port: process.env['PORT'] || 80,
 
   log: {
     level: process.env['LOG_LEVEL']
