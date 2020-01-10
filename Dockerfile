@@ -15,6 +15,8 @@ COPY . /usr/src/electron-release-server
 
 COPY config/docker.js config/local.js
 
+RUN chown -R 1101:2000 /
+
 EXPOSE 80
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "start", "--prod" ]
