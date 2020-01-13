@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/electron-release-server
@@ -16,7 +16,5 @@ COPY . /usr/src/electron-release-server
 COPY config/docker.js config/local.js
 
 RUN chown -R 1101:2000 /usr/src/electron-release-server
-
-EXPOSE 80
 
 CMD [ "npm", "start", "--prod" ]
