@@ -9,7 +9,7 @@ module.exports = {
     migrate: 'alter'
   },
 
-  port: process.env['PORT'] || 80,
+  port: Number(process.env['PORT']) || 80,
 
   log: {
     level: process.env['LOG_LEVEL']
@@ -26,11 +26,11 @@ module.exports = {
     postgresql: {
       adapter: 'sails-postgresql',
       host: process.env['DB_HOST'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[0],
-      port: process.env['DB_PORT'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[1].split('/')[0],
+      port: Number(process.env['DB_PORT']) || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[1].split('/')[0],
       user: process.env['DB_USERNAME'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[0].split(':')[1].split('/')[2],
       password: process.env['DB_PASSWORD'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[0].split(':')[2],
       database: process.env['DB_NAME'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('/')[3],
-      ssl: process.env['DB_SSL'] || 'false'
+      ssl: process.env['DB_SSL'] == 'true' || 'false'
     }
   },
   jwt: {
@@ -49,7 +49,7 @@ module.exports = {
     host: process.env['DB_HOST'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[0],
     user: process.env['DB_USERNAME'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[0].split(':')[1].split('/')[2],
     password: process.env['DB_PASSWORD'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[0].split(':')[2],
-    port: process.env['DB_PORT'] || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[1].split('/')[0]
+    port: Number(process.env['DB_PORT']) || process.env['DATABASE_URL'] && process.env['DATABASE_URL'].split('@')[1].split(':')[1].split('/')[0]
   }
 
 };
