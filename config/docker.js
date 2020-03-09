@@ -12,7 +12,7 @@ module.exports = {
   port: Number(process.env['PORT']) || 80,
 
   log: {
-    level: process.env['LOG_LEVEL']
+    level: process.env['LOG_LEVEL'] || 'verbose'
   },
 
   auth: {
