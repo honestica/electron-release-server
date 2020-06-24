@@ -37,7 +37,7 @@
     "pug": "^2.0.0-beta6",
     "rc": "~1.1.6",
     "sails": "^0.12.11",
-    "sails-disk": "^0.10.10",
+    "sails-disk": "^2.1.0",
     "sails-pg-session": "^1.0.1",
     "sails-postgresql": "^0.12.1",
     "semver": "^5.5.0",
