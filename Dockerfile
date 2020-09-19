@@ -5,7 +5,7 @@ RUN apk update && apk upgrade
 
 # install pyhton
 ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN apk add --update --no-cache python3 make git && ln -sf python3 /usr/bin/python
 
 # Create app directory
 WORKDIR /usr/src/electron-release-server
