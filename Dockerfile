@@ -1,4 +1,7 @@
-FROM node:12
+FROM node:12.18-alpine3.12
+
+# Update distro
+RUN apk update && apk upgrade
 
 # Create app directory
 WORKDIR /usr/src/electron-release-server
