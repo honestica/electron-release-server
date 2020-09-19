@@ -3,6 +3,10 @@ FROM node:12.18-alpine3.12
 # Update distro
 RUN apk update && apk upgrade
 
+# install pyhton
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+
 # Create app directory
 WORKDIR /usr/src/electron-release-server
 
