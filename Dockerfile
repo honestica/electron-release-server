@@ -1,4 +1,4 @@
-FROM node:12.18-alpine3.12
+FROM node:14.13.1-alpine3.12
 
 # Update distro
 RUN apk update && apk upgrade
