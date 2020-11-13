@@ -27,7 +27,7 @@ AssetService.serveFile = function(req, res, asset) {
         'Content-Disposition', 'attachment; filename="' + asset.name + '"'
       );
       res.setHeader('Content-Length', asset.size);
-      res.setHeader('Content-Type', mime.lookup(asset.fd));
+      res.setHeader('Content-Type', mime.getType(asset.fd));
     })
     .on('end', function complete() {
       // After we have sent the file, log analytics, failures experienced at
