@@ -36,7 +36,7 @@
     "passport-ldapauth": "^2.1.4",
     "pug": "^3.0.0",
     "rc": "~1.2.8",
-    "sails": "^0.12.13",
+    "sails": "^1.4.2",
     "sails-disk": "^0.10.10",
     "sails-pg-session": "^1.0.1",
     "sails-postgresql": "^0.12.1",
