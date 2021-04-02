@@ -1,4 +1,4 @@
-FROM node:12.18-alpine3.12
+FROM honestica/node:12.21-alpine
 
 # Update distro
 RUN apk update && apk upgrade
