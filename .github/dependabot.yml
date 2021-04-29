@@ -1,0 +1,63 @@
+version: 2
+registries:
+  docker-registry-registry-hub-docker-com:
+    type: docker-registry
+    url: https://registry.hub.docker.com
+    username: lifendependabot
+    password: "${{secrets.DOCKER_REGISTRY_REGISTRY_HUB_DOCKER_COM_PASSWORD}}"
+  npm-registry-nexus-public-k8s-azure-lifen-fr-repository-npm-life:
+    type: npm-registry
+    url: https://nexus.public.k8s-azure.lifen.fr/repository/npm-lifen
+    username: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_REPOSITORY_NPM_LIFE_USERNAME}}"
+    password: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_REPOSITORY_NPM_LIFE_PASSWORD}}"
+  npm-registry-nexus-public-k8s-azure-lifen-fr-repository-npm-all:
+    type: npm-registry
+    url: https://nexus.public.k8s-azure.lifen.fr/repository/npm-all
+    username: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_REPOSITORY_NPM_ALL_USERNAME}}"
+    password: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_REPOSITORY_NPM_ALL_PASSWORD}}"
+  npm-registry-nexus-public-k8s-azure-lifen-fr:
+    type: npm-registry
+    url: https://nexus.public.k8s-azure.lifen.fr
+    username: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_USERNAME}}"
+    password: "${{secrets.NPM_REGISTRY_NEXUS_PUBLIC_K8S_AZURE_LIFEN_FR_PASSWORD}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+    timezone: Europe/Paris
+  ignore:
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: sails
+    versions:
+    - 1.4.0
+  - dependency-name: grunt-contrib-less
+    versions:
+    - 2.0.0
+  registries:
+  - npm-registry-nexus-public-k8s-azure-lifen-fr-repository-npm-life
+  - npm-registry-nexus-public-k8s-azure-lifen-fr-repository-npm-all
+  - npm-registry-nexus-public-k8s-azure-lifen-fr
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+    timezone: Europe/Paris
+  ignore:
+  - dependency-name: node
+    versions:
+    - 15.10.0.pre.alpine3.12
+    - 15.11.0.pre.alpine3.12
+    - 15.12.0.pre.alpine3.12
+    - 15.13.0.pre.alpine3.12
+    - 15.14.0.pre.alpine3.12
+    - 15.7.0.pre.alpine3.12
+    - 15.8.0.pre.alpine3.12
+    - 15.9.0.pre.alpine3.12
+  registries:
+  - docker-registry-registry-hub-docker-com
