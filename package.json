@@ -30,7 +30,7 @@
     "include-all": "~4.0.3",
     "jsonwebtoken": "^8.5.1",
     "ldapauth-fork": "^4.3.3",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.21",
     "mime": "^2.4.6",
     "passport": "^0.4.1",
     "passport-ldapauth": "^2.1.4",
